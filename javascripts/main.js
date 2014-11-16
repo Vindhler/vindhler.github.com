@@ -7,7 +7,8 @@ function calculateFunction(){
 	document.getElementById("gasSum").innerHTML = calculateGas();
 	document.getElementById("houseSum").innerHTML = calculateHouse();	
 	document.getElementById("heatSum").innerHTML = calculateHeat();
-	document.getElementById("total").innerHTML = calculateEnergy()+calculateWater()+calculateSewage()+calculateGas()+calculateHouse()+calculateHeat();
+	document.getElementById("litterSum").innerHTML = calculateLitter();
+	document.getElementById("total").innerHTML = parseFloat(calculateEnergy())+parseFloat(calculateWater())+parseFloat(calculateSewage())+parseFloat(calculateGas())+parseFloat(calculateHouse())+parseFloat(calculateHeat())+parseFloat(calculateLitter());
 }
 
 function calculateCounter(first,last,difference){
@@ -15,7 +16,7 @@ function calculateCounter(first,last,difference){
 		alert("перепутаны колонки начальных и конечных показаний счетчиков");
 		return 0;
 		}
-	return parseFloat(difference)*(parseFloat(last)-parseFloat(first))
+	return (parseFloat(difference)*(parseFloat(last)-parseFloat(first))).toFixed(2)
  }
  
  function calculateEnergy(){
@@ -52,4 +53,7 @@ function calculateHouse(){
 	}
 function calculateHeat(){
 	return parseFloat(document.getElementById("heatTariff").value);
+	}
+function calculateLitter(){
+	return parseFloat(document.getElementById("litterTariff").value);
 	}
