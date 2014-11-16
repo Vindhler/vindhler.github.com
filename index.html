@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<head>
+	<style>
+		table, th, td {
+	width: 5%;
+    border: 3px solid black;
+    border-collapse: collapse;
+}
+h1 {
+	color: red;
+}
+	</style>
+	<script>
+		function calculateFunction(){
+	document.getElementById("energySum").innerHTML = calculateEnergy();
+	document.getElementById("waterSum").innerHTML = calculateWater();
+	document.getElementById("sewageSum").innerHTML = calculateSewage();
+	document.getElementById("gasSum").innerHTML = calculateGas();
+	document.getElementById("houseSum").innerHTML = calculateHouse();	
+	document.getElementById("heatSum").innerHTML = calculateHeat();
+	document.getElementById("total").innerHTML = calculateEnergy()+calculateWater()+calculateSewage()+calculateGas()+calculateHouse()+calculateHeat();
+}
+
+function calculateCounter(first,last,difference){
+	if (parseFloat(last) < parseFloat(first)){
+		alert("перепутаны колонки начальных и конечных показаний счетчиков");
+		return 0;
+		}
+	return parseFloat(difference)*(parseFloat(last)-parseFloat(first))
+ }
+ 
+ function calculateEnergy(){
+	var firstVal = document.getElementById("energyStart").value;
+	var secondVal = document.getElementById("energyInterm").value;
+	var tariffEn = document.getElementById("energyTariff").value;
+	console.log(firstVal,secondVal,tariffEn);	
+	return calculateCounter(firstVal,secondVal,tariffEn);
+	}
+
+ function calculateWater(){
+	var firstVal = document.getElementById("waterStart").value;
+	var secondVal = document.getElementById("waterInterm").value;
+	var tariffEn = document.getElementById("waterTariff").value;
+	console.log(firstVal,secondVal,tariffEn);	
+	return calculateCounter(firstVal,secondVal,tariffEn);
+	}
+function calculateSewage(){
+	var firstVal = document.getElementById("sewageStart").value;
+	var secondVal = document.getElementById("sewageInterm").value;
+	var tariffEn = document.getElementById("sewageTariff").value;
+	console.log(firstVal,secondVal,tariffEn);	
+	return calculateCounter(firstVal,secondVal,tariffEn);
+	}
+function calculateGas(){
+	var firstVal = document.getElementById("gasStart").value;
+	var secondVal = document.getElementById("gasInterm").value;
+	var tariffEn = document.getElementById("gasTariff").value;
+	console.log(firstVal,secondVal,tariffEn);	
+	return calculateCounter(firstVal,secondVal,tariffEn);
+	}
+function calculateHouse(){
+	return parseFloat(document.getElementById("houseTariff").value);
+	}
+function calculateHeat(){
+	return parseFloat(document.getElementById("heatTariff").value);
+	}
+	</script>	
+</head>
+<body>
+<h1>Подсчет коммунального платежа по Виннице</h1>
+
+ <table style="width:100%">
+  <tr id="tableHeader">
+    <th>платеж</th>
+    <th>тариф</th>
+    <th>Начальные</th>
+    <th>Конечные</th>
+    <th>сумма</th>
+  </tr>
+  <tr>
+  	<td>Електроенергія</td>
+    <td><input type="text" id="energyTariff" value="0.3054" onchange="calculateFunction()"></td>
+    <td><input type="number" id="energyStart" value="9568" onchange="calculateFunction()"></td>
+    <td><input type="number" id="energyInterm" value="9568" onchange="calculateFunction()"></td>
+    <td><p id="energySum"/></td>
+  </tr>
+  <tr>
+    <td>Водопостачання</td>
+    <td><input type="text" id="waterTariff" value="1.165" onchange="calculateFunction()"></td>
+    <td><input type="number" id="waterStart" value="3568" onchange="calculateFunction()"></td>
+    <td><input type="number" id="waterInterm" value="3568" onchange="calculateFunction()"></td>
+    <td><p id="waterSum"/></td>
+  </tr>
+   <tr>
+    <td>Водовідведення</td>
+    <td><input type="text" id="sewageTariff" value="1.212" onchange="calculateFunction()"></td>
+    <td><input type="number" id="sewageStart" value="3568" onchange="calculateFunction()"></td>
+    <td><input type="number" id="sewageInterm" value="3568" onchange="calculateFunction()"></td>
+    <td><p id="sewageSum"/></td>
+  </tr>
+   <tr>
+    <td>Газ</td>
+    <td><input type="text" id="gasTariff" value="1.128" onchange="calculateFunction()"></td>
+    <td><input type="number" id="gasStart" value="650" onchange="calculateFunction()"></td>
+    <td><input type="number" id="gasInterm" value="650" onchange="calculateFunction()"></td>
+    <td><p id="gasSum"/></td>
+  </tr>
+  <tr>
+    <td colspan="2">Обслуговування будинку</td>
+    <td colspan ="2"><input type="text" id="houseTariff" value="83" onchange="calculateFunction()"></td>
+    <td><p id="houseSum"/></td>
+  </tr>
+    <tr>
+    <td colspan="2">Опалення</td>
+    <td colspan ="2"><input type="text" id="heatTariff" value="250" onchange="calculateFunction()"></td>
+    <td><p id="heatSum"/></td>
+  </tr>
+</table> 
+<p><span>Сумма: </span><span id="total"><span></p>
+
+
+</body>
+</html> 
