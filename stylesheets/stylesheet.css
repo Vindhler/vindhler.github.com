@@ -48,6 +48,9 @@ table, th, td {
 /*******************************************************************************
 Theme Styles
 *******************************************************************************/
+table {
+    background: #ffffff url("images/P1020612.JPG") no-repeat right top;
+}
 
 body {
   box-sizing: border-box;
