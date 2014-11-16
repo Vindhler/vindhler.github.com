@@ -17,7 +17,7 @@ function calculateCounter(first,last,difference){
 		alert("перепутаны колонки начальных и конечных показаний счетчиков");
 		return 0;
 		}
-	return (parseFloat(difference)*(parseFloat(last)-parseFloat(first))).toFixed(2)
+	return (parseFloat(difference)*(parseFloat(last)-parseFloat(first))).toFixed(2);
  }
  
  function calculateEnergy(){
