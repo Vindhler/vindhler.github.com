@@ -96,6 +96,7 @@ h6 {
 
 p {
   margin: 10px 0 15px 0;
+  font-size: 16px;
 }
 
 footer p {
@@ -124,6 +125,11 @@ a:hover, a:focus {text-decoration: underline;}
 footer a {
   color: #F2F2F2;
   text-decoration: underline;
+}
+
+span {
+  margin: 10px 0 15px 0;
+  font-size: 16px;
 }
 
 em {
