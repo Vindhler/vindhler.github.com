@@ -1,3 +1,5 @@
+console.log('This would be the main JS file.');
+
 function calculateFunction(){
 	document.getElementById("energySum").innerHTML = calculateEnergy();
 	document.getElementById("waterSum").innerHTML = calculateWater();
@@ -6,7 +8,8 @@ function calculateFunction(){
 	document.getElementById("houseSum").innerHTML = calculateHouse();	
 	document.getElementById("heatSum").innerHTML = calculateHeat();
 	document.getElementById("litterSum").innerHTML = calculateLitter();
-	document.getElementById("total").innerHTML = parseFloat(calculateEnergy())+parseFloat(calculateWater())+parseFloat(calculateSewage())+parseFloat(calculateGas())+parseFloat(calculateHouse())+parseFloat(calculateHeat())+parseFloat(calculateLitter());
+	document.getElementById("total").innerHTML = (parseFloat(calculateEnergy())+parseFloat(calculateWater())+parseFloat(calculateSewage())+parseFloat(calculateGas())+parseFloat(calculateHouse())+parseFloat(calculateHeat())+parseFloat(calculateLitter())).toFixed(2);
+	return;
 }
 
 function calculateCounter(first,last,difference){
