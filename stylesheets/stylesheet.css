@@ -48,8 +48,8 @@ table, th, td {
 /*******************************************************************************
 Theme Styles
 *******************************************************************************/
-table {
-    background: #ffffff url("images/P1020612.JPG") no-repeat right top;
+table:hover {
+    background-image:url("images/P1020612.JPG");
 }
 
 body {
