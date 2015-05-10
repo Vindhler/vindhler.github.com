@@ -1,18 +1,6 @@
 console.log('This would be the main JS file.');
 
-var list = ["Лена", "Андрей", "Саша", "Женя", "Паша"];
 
-var item = list[Math.floor(Math.random()*items.length)];
-for (var i=0; i<5; i++) {
-  document.write("<tr><td>Number " + i + " is:</td>");
-  document.write("<td>" + myArray[i] + "</td></tr>");
-}
-function choise(){
-	var position = Math.floor(Math.random()*items.length)];
-	alert(list[position]);
-	array.splice(position, 1);
-}
-/*
 function calculateFunction(){
 	document.getElementById("energySum").innerHTML = calculateEnergy();
 	document.getElementById("waterSum").innerHTML = calculateWater();
@@ -71,4 +59,4 @@ function calculateHeat(){
 function calculateLitter(){
 	return parseFloat(document.getElementById("litterTariff").value);
 	}
-*/
+
